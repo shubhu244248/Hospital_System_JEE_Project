@@ -33,7 +33,6 @@
 
 							<!-- Seccess msg and error msg -->
 							<c:if test="${not empty sucMsg }">
-
 								<p class="text-center text-success fs-3">${sucMsg}</p>
 								<c:remove var="sucMsg" scope="session" />
 							</c:if>
