@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -70,18 +71,15 @@
 			</div>
 
 			<div class="col-md-4 mt-2">
-
+				<!--  Pop up for the Specialist add-->
 				<div class="card paint-card " data-bs-toggle="modal"
 					data-bs-target="#exampleModal">
 					<div class="card-body text-center text-primary">
 						<i class="far fa-calendar-check fa-3x"></i><br>
 						<p class="fs-4 text-center">
 							Specialist <br>
-
-						</p>
 					</div>
 				</div>
-
 			</div>
 
 		</div>
@@ -89,7 +87,7 @@
 
 
 
-	<!-- Modal -->
+	<!-- Pop up Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -100,7 +98,7 @@
 						aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<form action="" method="post">
+					<form action="../addSpecialist" method="post">
 
 						<div class="form-group">
 							<label>Enter Specialist Name</label> <input type="text"
