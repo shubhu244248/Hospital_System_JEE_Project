@@ -1,4 +1,6 @@
 
+<%@page import="com.db.DatabaseConnection"%>
+<%@page import="com.dao.DoctorDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -30,9 +32,9 @@
 			<div class="fs-3 text-center text-success" role="alert">${sucMsg}</div>
 			<c:remove var="sucMsg" scope="session" />
 		</c:if>
-		<%-- <%
-		DoctorDao dao = new DoctorDao(DBConnect.getConn());
-		%> --%>
+		<%
+		DoctorDAO dao = new DoctorDAO(DatabaseConnection.getConn());
+		%> 
 		<div class="row">
 			<div class="col-md-4">
 				<div class="card paint-card">
@@ -77,7 +79,7 @@
 					<div class="card-body text-center text-primary">
 						<i class="far fa-calendar-check fa-3x"></i><br>
 						<p class="fs-4 text-center">
-							Specialist <br>
+							Specialist <br> <%=dao.countSpecialist()%>
 					</div>
 				</div>
 			</div>

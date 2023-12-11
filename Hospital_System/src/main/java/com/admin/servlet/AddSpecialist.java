@@ -16,11 +16,12 @@ import com.db.DatabaseConnection;
 public class AddSpecialist extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String specName = req.getParameter("specialist");
+		
+		String specName = req.getParameter("specName");
 
 		SpecialistDAO dao = new SpecialistDAO(DatabaseConnection.getConn());
 
-		dao.addSpecialist(specName);
+//		dao.addSpecialist(specName);
 
 		boolean flag = dao.addSpecialist(specName);
 
