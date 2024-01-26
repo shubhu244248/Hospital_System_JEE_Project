@@ -3,6 +3,7 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,11 +20,12 @@ public class SpecialistDAO {
 	public boolean addSpecialist(String spec) {
 		boolean flag = false;
 		try {
-			String query = "insert into specialist(spec_name) values(?)";
-			PreparedStatement ps = conn.prepareStatement(query);
-			ps.setString(1, spec);
+			String query = "insert into specialist spec_name values " + spec;
+//			PreparedStatement ps = conn.prepareStatement(query);
+//			ps.setString(1, spec);
 
-			int i = ps.executeUpdate();
+			Statement st = conn.createStatement();
+			int i = st.executeUpdate(query);
 			if (i == 1) {
 				flag = true;
 			}
